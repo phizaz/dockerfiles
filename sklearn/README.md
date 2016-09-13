@@ -1,9 +1,9 @@
-# docker-sklearn
+# Sklearn Dockerized
 Python's scikit-learn dockerized
 
 ## Including
 - build essential
-- python 2
+- python (tag: python2, python3)
 - numpy
 - scipy
 - scikit-learn

@@ -1,4 +1,5 @@
-# docker-nofold-ssl
+# Nofold-SSL Dockerized
+
 Nofold-SSL, an algorithm for RNA clustering, dependencies dockerized
 
 ## Including
