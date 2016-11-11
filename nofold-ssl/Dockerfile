@@ -16,3 +16,4 @@ RUN pip install --no-cache-dir biopython
 RUN pip install --no-cache-dir fastcluster
 RUN pip install --no-cache-dir sortedcontainers
 RUN pip install --no-cache-dir future
+RUN pip install --no-cache-dir matplotlib

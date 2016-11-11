@@ -9,3 +9,4 @@ Nofold-SSL, an algorithm for RNA clustering, dependencies dockerized
 - fastcluster
 - sortedcontainers
 - future 
+- Matplotlibs
