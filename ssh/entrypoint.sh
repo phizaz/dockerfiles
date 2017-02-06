@@ -5,4 +5,4 @@ cp -R /ssh /root/.ssh
 chmod -R 500 /root/.ssh
 
 # entrypoint
-ssh $@
+exec ssh $@
