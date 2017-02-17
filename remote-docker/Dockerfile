@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3
 MAINTAINER Konpat Preechakul <the.akita.ta@gmail.com>
 
 RUN apt-get update
@@ -12,4 +12,5 @@ VOLUME ["/run"]
 
 WORKDIR /run
 COPY entrypoint.sh /usr/local/bin/
+RUN ln -s /usr/local/bin/entrypoint.sh /
 ENTRYPOINT ["entrypoint.sh"]
