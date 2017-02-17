@@ -7,4 +7,5 @@ RUN apt-get install -y --no-install-recommends openssh-client
 VOLUME ["/ssh"]
 
 COPY entrypoint.sh /usr/local/bin/
+RUN ln -s /usr/local/bin/entrypoint.sh /
 ENTRYPOINT ["entrypoint.sh"]
