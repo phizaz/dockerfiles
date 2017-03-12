@@ -8,12 +8,20 @@ don't know what's remote-docker ? see: https://github.com/phizaz/remote-docker
 docker run -it --rm \
     -v ${HOME}/.ssh:/ssh \
     -v `pwd`:/run \
-    phizaz/rdocker --help
+    phizaz/rdocker <command>
 ```
 
 ## Alias for easy use
 
-Put the aforementioned command to your `.bashrc` or `.zshrc` and source it.
+
+```
+alias rdocker='docker run -it --rm \
+    -v ${HOME}/.ssh:/ssh \
+    -v `pwd`:/run \
+    phizaz/rdocker $@'
+```
+
+Put the above command to your `.bashrc` or `.zshrc` and source it.
 
 Now, you can try `rdocker --help`, and see:
 
