@@ -14,6 +14,6 @@ VOLUME ["/ssh"]
 VOLUME ["/run"]
 
 WORKDIR /run
-COPY entrypoint.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/entrypoint.sh /
-ENTRYPOINT ["entrypoint.sh"]
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["sh", "/entrypoint.sh"]
