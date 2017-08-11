@@ -1,14 +1,3 @@
-# FROM ubuntu:16.04
-
-# RUN apt-get update
-# RUN apt-get install -y wget
-
-# # conda
-# RUN cd /tmp \
-#     && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-#     && bash Miniconda3-latest-Linux-x86_64.sh -b -p /usr/conda
-# ENV PATH /usr/conda/bin:$PATH
-
 FROM continuumio/miniconda
 
 # add conda bio channel
