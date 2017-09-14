@@ -1,4 +1,4 @@
-# Nofold-SSL Dockerized
+# (NEED UPDATE) Nofold-SSL Dockerized
 
 Nofold-SSL, an algorithm for RNA clustering, dependencies dockerized
 
@@ -8,5 +8,5 @@ Nofold-SSL, an algorithm for RNA clustering, dependencies dockerized
 - biopython
 - fastcluster
 - sortedcontainers
-- future 
+- future
 - Matplotlibs
