@@ -1,3 +1,4 @@
+# DEPRECATED
 # Sklearn Dockerized
 Python's scikit-learn dockerized
 
