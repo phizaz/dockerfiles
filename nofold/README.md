@@ -48,7 +48,7 @@ The following snippet will perform these things:
 docker run -it --rm --user=1000:1000 \
     --workdir=/home/docker/nofold/src \
     phizaz/nofold:1.0.1 \
-        python score_and_normalize.py ../demo/demo1/demo1.db --cpus=4 \
+    bash -c "python score_and_normalize.py ../demo/demo1/demo1.db --cpus=4 \
         && python nofold_pipeline.py ../demo/demo1/demo1.zNorm.pcNorm100.zNorm.bitscore ../demo/demo1/demo1.db --cpus=4 --bounds-file=../thresh/bounds_30seq.txt --verbose \
-        && bash
+        && bash"
 ```
