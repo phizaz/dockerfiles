@@ -1,8 +1,8 @@
 FROM debian:jessie
 MAINTAINER Konpat Preechakul <the.akita.ta@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends rsync openssh-client
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends rsync openssh-client
 
 VOLUME ["/ssh"]
 VOLUME ["/workdir"]
