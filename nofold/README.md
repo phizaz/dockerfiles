@@ -1,10 +1,10 @@
-# Nofold 1.0.2 docker image
+# Nofold 1.0.1 docker image
 
 Original work from http://kim.bio.upenn.edu/software/nofold.shtml
 
 ## What's in this Dockerfile
 
-- Nofold 1.0.2 (http://kim.bio.upenn.edu/software/nofold.shtml)
+- Nofold 1.0.1 (http://kim.bio.upenn.edu/software/nofold.shtml)
     - Infernal 1.0.2
     - Locarna 1.8.7
     - RNAz 2.1
