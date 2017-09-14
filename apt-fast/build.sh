@@ -1,2 +1,2 @@
 #! /bin/bash
-docker build -t phizaz:apt-fast .
+docker build -t phizaz/apt-fast .

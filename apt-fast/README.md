@@ -7,5 +7,5 @@ I just don't want to wait forever for `apt-get update` and `apt-get install`
 ## Build
 
 ```
-docker build -t phizaz:apt-fast .
+docker build -t phizaz/apt-fast .
 ```

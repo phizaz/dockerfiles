@@ -1,2 +1,2 @@
 #! /bin/bash
-docker build -t phizaz:fixuid .
+docker build -t phizaz/fixuid .
