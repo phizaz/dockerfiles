@@ -30,5 +30,5 @@ Please refer to https://github.com/boxboat/fixuid for more in details.
 ## Build
 
 ```
-docker build -t phizaz/fixuid .
+docker build -t phizaz/fixuid:ubuntu-16.04 .
 ```
