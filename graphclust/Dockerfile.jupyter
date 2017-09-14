@@ -111,12 +111,20 @@ RUN apt-get update && apt-get install -y time
 ###### SETUP GIT ############################
 RUN apt-fast update && apt-fast install -y git
 
+###### SETUP JUPYTER NOTEBOOK ###############
+RUN pip install jupyter jupyter_contrib_nbextensions
+
 ########################################
 # USER MODE
 ########################################
 USER docker
 
+###### SETUP JUPYTER NOTEBOOK NBEXTENSION ###############
+RUN jupyter contrib nbextension install --user
+
 ###### PREPARE THE WORKING DIR #########################
 RUN mkdir -p /home/docker/workdir
 WORKDIR /home/docker/workdir
 ENV WORKDIR=/home/docker/workdir
+
+ENTRYPOINT ["fixuid", "jupyter", "notebook", "--allow-root", "--ip=*"]

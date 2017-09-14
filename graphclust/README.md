@@ -17,11 +17,17 @@ Original work from http://www.bioinf.uni-freiburg.de/Software/GraphClust/
 ## Build
 
 ```
+# build
 docker build -t phizaz/graphclust:0.7.6 .
+# build with jupyter
+docker build -t phizaz/graphclust:0.7.6-jupyter -f Dockerfile.jupyter .
 ```
 
 ## Usage
 
 ```
-docker run -it -v <src>:/home/docker/workdir phizaz/graphclust:0.7.6 bash
+# run
+docker run -it --user=1000:1000 -v <src>:/home/docker/workdir phizaz/graphclust:0.7.6 bash
+# run with jupyter
+docker run -it --rm --user=1000:1000 -v <src>:/home/docker/workdir -p 8888:8888 phizaz/graphclust:0.7.6-jupyter --port=8888
 ```

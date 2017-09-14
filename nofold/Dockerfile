@@ -65,6 +65,9 @@ RUN Rscript -e 'install.packages("fastcluster", repos="https://cloud.r-project.o
 ###### SETUP TIME ###########################
 RUN apt-get update && apt-get install -y time
 
+###### SETUP GIT ############################
+RUN apt-fast update && apt-fast install -y git
+
 # ########################################
 # # USER MODE
 # ########################################
