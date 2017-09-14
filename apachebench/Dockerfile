@@ -1,7 +1,4 @@
-FROM debian
+FROM debian:latest
 MAINTAINER Konpat Preechakul <the.akita.ta@gmail.com>
-
-RUN apt-get update
-RUN apt-get install -y apache2-utils
-
+RUN apt-get update && apt-get install -y apache2-utils
 ENTRYPOINT ["ab"]
