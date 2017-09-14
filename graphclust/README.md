@@ -31,3 +31,21 @@ docker run -it --user=1000:1000 -v <src>:/home/docker/workdir phizaz/graphclust:
 # run with jupyter
 docker run -it --rm --user=1000:1000 -v <src>:/home/docker/workdir -p 8888:8888 phizaz/graphclust:0.7.6-jupyter --port=8888
 ```
+
+## Test
+
+To test the usability of this Dockerfile after you have built the image, I have provided the copy-and-paste script here for your reproducibility.
+
+Note that it will run against my example `test/test.fa` (which is originally yanked from https://github.com/sarahmid/nofold/blob/master/demo/demo1/demo1.db)
+
+```
+docker run -it --user=1000:1000 \
+    -v `pwd`/test:/home/docker/workdir \
+    phizaz/graphclust:0.7.6 \
+    MASTER_GraphClust.pl \
+        --root run_test \
+        --fasta test.fa \
+        --config config.default_global \
+        --threads=4 \
+        --verbose
+```
