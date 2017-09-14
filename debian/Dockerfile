@@ -1,9 +1,5 @@
-FROM debian:jessie
+FROM debian:latest
 MAINTAINER Konpat Preechakul <the.akita.ta@gmail.com>
-
-RUN apt-get clean && apt-key update && apt-get update
-
-RUN apt-get install -y --no-install-recommends build-essential
-
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
