@@ -1,4 +1,4 @@
-# APT-FAST based Ubuntu 16.04 image
+# Apt-fast on Ubuntu 16.04 base image
 
 ## Rationale
 
