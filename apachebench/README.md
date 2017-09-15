@@ -1,9 +1,9 @@
 # ApacheBench in Docker
 
-## Installation
+## Build
 
 ```
-docker pull phizaz/ab
+docker build -t phizaz/ab .
 ```
 
 ## Usage
