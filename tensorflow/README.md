@@ -40,4 +40,4 @@ With `--user` you can specify the runner of this image which in this case is the
 
 ### `phizaz/tensorflow:dcgan-gpu` - A Dockerfile for carpedm20's DCGAN Tensorflow
 
-visit: https://github.com/phizaz/dockerfiles/tree/master/tensorflow/DCGAN_tensorflow
+Visit: https://github.com/phizaz/dockerfiles/tree/master/tensorflow/DCGAN_tensorflow
