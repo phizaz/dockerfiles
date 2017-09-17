@@ -35,3 +35,9 @@ nvidia-docker run -it --rm \
 ```
 
 With `--user` you can specify the runner of this image which in this case is the current user `$UID`.
+
+## Tag Variations
+
+### `phizaz/tensorflow:dcgan-gpu` - A Dockerfile for carpedm20's DCGAN Tensorflow
+
+visit: https://github.com/phizaz/dockerfiles/tree/master/tensorflow/DCGAN_tensorflow
