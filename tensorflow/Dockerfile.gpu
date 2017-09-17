@@ -1,5 +1,51 @@
 FROM tensorflow/tensorflow:latest-gpu-py3
 
-RUN apt-get update && apt-get install -y git
+########################################
+# ROOT MODE
+########################################
+
+###### SETUP APT-FAST #####################
+RUN apt-get update && apt-get install -y aria2 git \
+    && git clone https://github.com/ilikenwf/apt-fast /tmp/apt-fast \
+    && cp /tmp/apt-fast/apt-fast /usr/bin \
+    && chmod +x /usr/bin/apt-fast \
+    && cp /tmp/apt-fast/apt-fast.conf /etc
+
+###### SETUP CURL #########################
+RUN apt-fast update && apt-fast install -y curl
+
+###### SETUP FIXUID #######################
+RUN addgroup --gid 1000 docker && \
+    adduser --uid 1000 --ingroup docker --home /home/docker --shell /bin/sh --disabled-password --gecos "" docker
+
+RUN USER=docker && \
+    GROUP=docker && \
+    curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.1/fixuid-0.1-linux-amd64.tar.gz | tar -C /usr/local/bin -xzf - && \
+    chown root:root /usr/local/bin/fixuid && \
+    chmod 4755 /usr/local/bin/fixuid && \
+    mkdir -p /etc/fixuid && \
+    printf "user: $USER\ngroup: $GROUP\n" > /etc/fixuid/config.yml
+
+ENTRYPOINT ["fixuid"]
+
+###### MIGRATE ROOT TO USER #########################
+RUN cp -R /root /home/docker \
+    && chown -R docker:docker /home/docker
+
+###### PREPARE THE WORKING DIR #########################
+WORKDIR /notebooks
+ENV WORKDIR=/notebooks
+RUN chown -R docker:docker /notebooks
+
+# ###### SETUP JUPYTER NBEXTENSIONS #########
 RUN pip install --no-cache-dir jupyter_contrib_nbextensions
+
+########################################
+# USER MODE
+########################################
+USER docker
+
+###### SETUP JUPYTER NBEXTENSIONS #########
 RUN jupyter contrib nbextension install --user
+
+CMD ["jupyter", "notebook", "--ip=*"]
