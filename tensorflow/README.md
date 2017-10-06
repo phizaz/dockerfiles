@@ -22,6 +22,12 @@ This Dockerfile is based on `tensorflow/tensorflow:latest-gpu-py3` than means it
 nvidia-docker build -t phizaz/tensorflow:gpu -f Dockerfile.gpu .
 ```
 
+### Build `:keras-gpu`
+
+```
+nvidia-docker build -t phizaz/tensorflow:keras-gpu -f Dockerfile.gpu.keras .
+```
+
 ## Usage
 
 ```
@@ -36,7 +42,13 @@ nvidia-docker run -it --rm \
 
 With `--user` you can specify the runner of this image which in this case is the current user `$UID`.
 
+Or with `:keras-gpu` instead.
+
+You can quick start by seeing the `test` directory within this repo. There is a notebook
+
 ## Tag Variations
+
+### `phizaz/tensorflow:keras-gpu` - with Keras (only with tensorflow backend) with GPU support
 
 ### `phizaz/tensorflow:dcgan-gpu` - A Dockerfile for carpedm20's DCGAN Tensorflow
 
